@@ -1,0 +1,496 @@
+/* Floating Text */
+.bg-salmon {
+  background: salmon;
+}
+
+.talk {
+  text-align: center;
+}
+
+.css-animation h2 {
+  font-size: 10rem;
+  color: rgb(255, 255, 255);
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1rem;
+  text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef,
+    0 4px 0 #efefef, 0 30px 5px rgba(0, 0, 0, 0.1);
+  animation: float 2s ease-in-out 0.5s infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Icons Hover */
+.bg {
+  background-color: #000;
+}
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons li a {
+  color: salmon;
+  font-size: 5rem;
+  border-radius: 100%;
+  border: 2px solid salmon;
+  position: relative;
+  padding: 5rem;
+  margin: 0 2rem;
+  z-index: 10;
+}
+.icons li a:hover {
+  color: #efefef;
+  border: none;
+}
+.icons li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: salmon;
+  border-radius: 100%;
+  transition: all 0.5s;
+  opacity: 0;
+  z-index: -1;
+}
+.icons li a:hover:before {
+  opacity: 1;
+  transform: scale(0.8);
+}
+.icons li a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 2px dashed salmon;
+  border-width: 0.4rem;
+  border-radius: 100px;
+  transition: all 0.5s;
+  opacity: 0;
+  box-sizing: border-box;
+  z-index: -1;
+}
+.icons li a:hover::after {
+  opacity: 1;
+  animation: rotating 15s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* css-loading */
+.css-loader {
+  perspective: 30rem;
+}
+.css-loading a {
+  font-size: 3rem;
+  color: salmon;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.css-loading {
+  background-color: aliceblue;
+  border-radius: 10%;
+  height: 20rem;
+  width: 20rem;
+
+  animation: loading 2s linear infinite alternate;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+}
+
+/* SVG ANIMATION */
+
+.svg-animation {
+  background: #101010;
+}
+
+svg {
+  overflow: hidden;
+  width: 50%;
+  height: 50%;
+  background: url(./img/bottom-bg.png);
+  background-repeat: repeat-x;
+  background-position: bottom right;
+  animation: ground-position 2s linear infinite;
+}
+
+@keyframes ground-position {
+  from {
+    background-position: bottom right;
+  }
+  to {
+    background-position: bottom left;
+  }
+}
+
+#back-tire,
+#front-tire {
+  animation: back-tire 3s linear 0.5s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#man-tire {
+  animation: man-tire 3s linear 0.5s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes back-tire {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes man-tire {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#clouds path {
+  animation: clouds 10s linear 2s infinite;
+}
+#trees {
+  animation: tress 20s linear 1s infinite;
+}
+#clouds ellipse {
+  animation: sun 8s linear 0.5s infinite alternate;
+  transform-box: fill-box;
+}
+@keyframes clouds {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes tress {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes sun {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#roads,
+#background {
+  display: none;
+}
+
+/* SVG Animation 2 */
+.svg-animate2 {
+  height: 100vh;
+  background: url(./img/bg.jpg);
+  background-position: bottom left;
+  animation: driving 10s linear infinite;
+  position: relative;
+}
+
+.sportscar {
+  position: absolute;
+  left: 30rem;
+  bottom: -5rem;
+  width: 20rem;
+}
+
+.motorbike {
+  position: absolute;
+  left: 70rem;
+  bottom: 5.5rem;
+  width: 15rem;
+}
+
+@keyframes driving {
+  from {
+    background-position: bottom left;
+  }
+
+  to {
+    background-position: bottom right;
+  }
+}
+
+/* Rain effect */
+.rain {
+  background: url(./img/rain.png);
+  animation: rain 5s linear infinite;
+}
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 20% 100%;
+  }
+}
+/* Rotating Text  */
+.text-rotate h2 {
+  color: aliceblue;
+  font-size: 8rem;
+}
+
+.flipper::before {
+  content: "Transitions";
+  text-transform: uppercase;
+  color: #000;
+  animation: word-switch 5s ease-out infinite;
+}
+
+@keyframes word-switch {
+  0% {
+    content: "Transitions";
+  }
+  50% {
+    content: "Animation";
+  }
+  100% {
+    content: "transofrm";
+  }
+}
+
+/* Banner */
+
+.banner {
+  background: url(./img/banner.png);
+  background-position: 0 0;
+  animation: banner 15s linear infinite;
+}
+
+@keyframes banner {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 60rem;
+  }
+}
+
+/* Light */
+.light li {
+  color: aliceblue;
+  font-size: 12rem;
+  font-weight: bolder;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 4rem;
+  animation: light 1.5s linear infinite;
+}
+
+@keyframes light {
+  0% {
+    color: aliceblue;
+    text-shadow: none;
+  }
+  90% {
+    color: aliceblue;
+    text-shadow: none;
+  }
+  100% {
+    color: salmon;
+    text-shadow: 0 0 7px salmon, 0 0 50px salmon;
+  }
+}
+
+.light li:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.light li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.light li:nth-child(3) {
+  animation-delay: 0.45s;
+}
+.light li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.light li:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+/* animated text background */
+
+.text-bg h2 {
+  font-size: 25rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5rem;
+  background: url(./img/text-banner.jpg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-bg 5s linear infinite alternate;
+}
+
+@keyframes text-bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Bouncing Balls */
+.bounce {
+  border-bottom: solid 10px white;
+  width: 50%;
+}
+
+.bounce li {
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: salmon;
+  animation: jumping 5s linear infinite;
+}
+
+.bounce2 {
+  border-bottom: solid 10px white;
+}
+
+.bounce2 li {
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: jumping 1s linear infinite;
+}
+@keyframes jumping {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+ul li:nth-child(1) {
+  animation-delay: 0.45s;
+}
+
+ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+ul li:nth-child(4) {
+  animation-delay: 0;
+}
+
+ul li:nth-child(5) {
+  animation-delay: 0.1s;
+}
+
+/* Pulse */
+
+.pulse {
+  font-size: 5rem;
+  color: aliceblue;
+  background-color: greenyellow;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  line-height: 10rem;
+  position: relative;
+  text-align: center;
+}
+.pulse::before {
+  content: "";
+  top: -2rem;
+  left: -2rem;
+  bottom: -2rem;
+  right: -2rem;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid greenyellow;
+  animation: pulse 1s linear infinite alternate;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
