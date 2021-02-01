@@ -27,7 +27,8 @@ CSS creative animations <br />
 ### About the Project
 
 Live: https://m90khan.github.io/CSS--Creative-Set-B/
-<img src="./img/css-setB.gif">
+
+<img src="./img/css-SetB.gif">
 <img src="./img/overview.jpg">
 
 ### Connect with me:
